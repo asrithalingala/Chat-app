@@ -6,7 +6,7 @@ dotenv.config()
 console.log("MONGODB_URI:", process.env.MONGO_URI);
 const app = express();
 const PORT = process.env.PORT || 5001;
-
+app.use(express.json())
 app.use("/api/auth", authRoutes)
 
 app.listen(PORT, ()=>{
